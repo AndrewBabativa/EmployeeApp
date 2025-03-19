@@ -25,8 +25,7 @@ El backend está desarrollado en **Node.js** con **NestJS** y **MongoDB Atlas**.
 
 ### 📌 Clonar el repositorio  
 ```sh
-  git clone https://github.com/tu-repositorio.git
-  cd tu-repositorio
+  git clone [https://github.com/tu-repositorio.git](https://github.com/AndrewBabativa/EmployeeApp.git)
 ```
 
 ### ⚙️ Configurar variables de entorno  
