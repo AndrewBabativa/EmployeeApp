@@ -23,6 +23,55 @@ El backend está desarrollado en **Node.js** con **NestJS** y **MongoDB Atlas**.
 - **Node.js 16+**  
 - **MongoDB Atlas** (se debe configurar una conexión a la base de datos)  
 
+## Conexión a MongoDB Compass
+
+Para conectarte a la base de datos `test` en MongoDB Compass, sigue estos pasos:
+
+1. Abre MongoDB Compass.
+2. En la pantalla principal, haz clic en **New Connection**.
+3. Ingresa la cadena de conexión en el formato:
+   ```
+   mongodb+srv://bgandrew69:andrew2025@cluster0.onafx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   ```
+4. Haz clic en **Connect**.
+
+## Estructura de las Colecciones
+
+Dentro de la base de datos `test`, hay dos colecciones principales: `employees` y `users`.
+
+### Colección: `employees`
+Almacena información de los empleados. Su estructura es la siguiente:
+
+```json
+{
+  "_id": "67da7925e330adc785b83241",
+  "firstName": "Yenny",
+  "lastName": "Jimenez",
+  "jobTitle": "sw admin",
+  "birthDate": "2025-02-25T00:00:00.000+00:00",
+  "email": "mona@yahoo.com",
+  "createdBy": "67da758fbc82f23dfc70b578", // UID del usuario de la colección `users` que creó el empleado
+  "__v": 0
+}
+```
+
+### Colección: `users`
+Almacena información de los usuarios registrados. Su estructura es la siguiente:
+
+```json
+{
+  "_id": "67d7c1f76dd8029496622135",
+  "firstName": "Andrés",
+  "lastName": "Pérez",
+  "email": "andres.perez@example.com",
+  "password": "$2b$10$Q4bF6FEIeq6/XAKQwDdVfuuwiRQeaO/Em.v3haYZ4l17RoNzJTVVW",
+  "__v": 0
+}
+```
+
+La contraseña en la colección `users` está encriptada usando `bcrypt` para mayor seguridad.
+
+
 ### 📌 Clonar el repositorio  
 ```sh
   git clone [https://github.com/tu-repositorio.git](https://github.com/AndrewBabativa/EmployeeApp.git)
