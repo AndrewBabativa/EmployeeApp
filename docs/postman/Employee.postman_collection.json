@@ -229,6 +229,31 @@
 				"description": "Generated from cURL: curl --location --request DELETE 'http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2' \\\r\n--header 'Authorization: Bearer <TOKEN>'\r\n"
 			},
 			"response": []
+		},
+		{
+			"name": "Traer Cargos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/positions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"positions"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:3000/positions\" -H \"Accept: application/json\"\r\n"
+			},
+			"response": []
 		}
 	]
 }
