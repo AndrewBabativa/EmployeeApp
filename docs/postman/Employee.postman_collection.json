@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "0ab6f3cb-303d-419d-9c67-f9bd52addaf4",
+		"name": "Employee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4009330"
+	},
+	"item": [
+		{
+			"name": "Registrar un nuevo usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"securePassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request POST 'http://localhost:3000/auth/register' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"securePassword123\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Iniciar sesión",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"securePassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request POST 'http://localhost:3000/auth/login' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"securePassword123\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un nuevo empleado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <TOKEN>"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"jobTitle\": \"Software Engineer\",\r\n    \"birthDate\": \"1990-05-15\",\r\n    \"email\": \"johndoe@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request POST 'http://localhost:3000/employees' \\\r\n--header 'Authorization: Bearer <TOKEN>' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"jobTitle\": \"Software Engineer\",\r\n    \"birthDate\": \"1990-05-15\",\r\n    \"email\": \"johndoe@example.com\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un empleado por ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <TOKEN>"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobTitle\": \"Senior Developer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees",
+						"64f6b8c9d9e5b3c6f7a2"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2' \\\r\n--header 'Authorization: Bearer <TOKEN>' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"jobTitle\": \"Senior Developer\"\r\n}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los empleados",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <TOKEN>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request GET 'http://localhost:3000/employees' \\\r\n--header 'Authorization: Bearer <TOKEN>'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un empleado por ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <TOKEN>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees",
+						"64f6b8c9d9e5b3c6f7a2"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request GET 'http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2' \\\r\n--header 'Authorization: Bearer <TOKEN>'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un empleado por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <TOKEN>"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees",
+						"64f6b8c9d9e5b3c6f7a2"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request DELETE 'http://localhost:3000/employees/64f6b8c9d9e5b3c6f7a2' \\\r\n--header 'Authorization: Bearer <TOKEN>'\r\n"
+			},
+			"response": []
+		}
+	]
+}

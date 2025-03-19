@@ -1,13 +1,19 @@
 import { Injectable, HttpException, HttpStatus, Logger } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { ConfigService } from '@nestjs/config';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class PositionsService {
-  private readonly apiUrl = 'https://ibillboard.com/api/positions';
+  private readonly apiUrl: string;
   private readonly logger = new Logger(PositionsService.name);
 
-  constructor(private readonly httpService: HttpService) {}
+  constructor(
+    private readonly httpService: HttpService,
+    private readonly configService: ConfigService
+  ) {
+    this.apiUrl = this.configService.get<string>('API_URL_POSITIONS') || '';
+  }
 
   async getPositions(): Promise<string[]> {
     try {
