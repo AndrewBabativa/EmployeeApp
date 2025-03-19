@@ -21,7 +21,7 @@ El backend está desarrollado en **Node.js** con **NestJS** y **MongoDB Atlas**.
 
 ### 🔧 Requisitos previos  
 - **Node.js 16+**  
-- **MongoDB Atlas** (se debe configurar una conexión a la base de datos)  
+- **MongoDB Atlas o MongoDB Compass** (se debe configurar una conexión a la base de datos)
 
 ## Conexión a MongoDB Compass
 
